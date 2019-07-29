@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
-const Rand5 = require('./../src/rand5');
+const Rand5 = require('../../src/two_sigma/rand5');
 
-let freq = [];
+const freq = [];
 freq.length = 6;
 freq.fill(0);
 
