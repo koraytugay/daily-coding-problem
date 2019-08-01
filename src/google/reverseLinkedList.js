@@ -11,8 +11,7 @@ const ReverseLinkedList = {
         }
 
         return newHead;
-    },
-    ListNode: function ListNode(val, /** @type{ListNode} */ next) {
+    }, ListNode: (val, /** @type{ListNode} */ next) => {
         return {
             val: val,
             next: next
