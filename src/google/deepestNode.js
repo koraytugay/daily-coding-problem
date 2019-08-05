@@ -7,23 +7,22 @@
 // d
 module.exports = {
     deepestNode: function findDeepest(node) {
-        let deepestFound = {node: null, level: -1};
-
-        function traverse(node, currentLevel = 0) {
+        function findRecursively(node, deepestFound = {node: null, level: -1}) {
             if (!node)
-                return;
+                return deepestFound;
 
-            currentLevel = currentLevel + 1;
+            let deepest = {node: node, level: deepestFound.level + 1};
 
-            if (deepestFound.level < currentLevel)
-                deepestFound = {node: node, level: currentLevel};
+            const deepestLeft = findRecursively(node.left, deepest);
+            const deepestRight = findRecursively(node.right, deepest);
 
-            traverse(node.left, currentLevel);
-            traverse(node.right, currentLevel);
+            if (deepestLeft.level > deepestRight.level)
+                return deepestLeft;
+            else
+                return deepestRight;
         }
 
-        traverse(node);
-        return deepestFound.node;
+        return findRecursively(node).node;
     },
     TreeNode: (val, left = null, right = null) => {
         return {val, left, right}
