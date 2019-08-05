@@ -7,9 +7,9 @@ let c = deepestNode.TreeNode('c');
 let d = deepestNode.TreeNode('d');
 
 a.left = b;
-a.right = c;
-
 b.left = d;
+
+a.right = c;
 
 expect(deepestNode.deepestNode(a).val).eq('d');
 

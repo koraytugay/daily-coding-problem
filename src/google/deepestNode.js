@@ -6,30 +6,26 @@
 //  /
 // d
 module.exports = {
-    deepestNode: function deepestNode(node, level = 0) {
-        node.depth = level;
+    deepestNode: function findDeepest(node) {
+        let deepestFound = {node: null, level: -1};
 
-        if (!node.left && !node.right)
-            return node;
+        function traverse(node, currentLevel = 0) {
+            if (!node)
+                return;
 
-        let deepestLeft, deepestRight = node;
+            currentLevel = currentLevel + 1;
 
-        if (node.left)
-            deepestLeft = deepestNode(node.left, level + 1);
+            if (deepestFound.level < currentLevel)
+                deepestFound = {node: node, level: currentLevel};
 
-        if (node.right)
-            deepestRight = deepestNode(node.right, level + 1);
-
-        if (deepestLeft.depth > deepestRight.depth)
-            return deepestLeft;
-        else
-            return deepestRight;
-    },
-    TreeNode: (val) => {
-        return {
-            val,
-            left: null,
-            right: null
+            traverse(node.left, currentLevel);
+            traverse(node.right, currentLevel);
         }
+
+        traverse(node);
+        return deepestFound.node;
+    },
+    TreeNode: (val, left = null, right = null) => {
+        return {val, left, right}
     }
 };
