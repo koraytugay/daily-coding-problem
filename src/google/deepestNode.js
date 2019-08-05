@@ -6,10 +6,7 @@
 //  /
 // d
 module.exports = {
-    deepestNode: function deepestNode(node, level) {
-        if (!level)
-            level = 0;
-
+    deepestNode: function deepestNode(node, level = 0) {
         node.depth = level;
 
         if (!node.left && !node.right)
@@ -30,7 +27,7 @@ module.exports = {
     },
     TreeNode: (val) => {
         return {
-            val: val,
+            val,
             left: null,
             right: null
         }
