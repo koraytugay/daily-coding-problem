@@ -7,7 +7,7 @@
 // d
 module.exports = {
     deepestNode: (node) => {
-        return function findRecursively(node, deepestFound = {node: null, level: -1}) {
+        return function findRecursively(node, deepestFound = {node: null, level: 0}) {
             if (!node) return deepestFound;
 
             const deepestLeft = findRecursively(node.left, {node: node, level: deepestFound.level + 1});
