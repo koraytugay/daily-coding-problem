@@ -11,7 +11,7 @@ b.left = d;
 
 a.right = c;
 
-expect(deepestNode.deepestNode(a).val).eq('d');
+expect(deepestNode.deepestNode(a).node.val).eq('d');
 
 a = deepestNode.TreeNode('a');
-expect(deepestNode.deepestNode(a).val).eq('a');
+expect(deepestNode.deepestNode(a).node.val).eq('a');
