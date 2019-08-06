@@ -1,1 +1,1 @@
-My solutions to [Daily Coding Problem](https://www.dailycodingproblem.com/) in JavaScript, for exercising purposes.
+My solutions in JavaScript to challenges found in [Daily Coding Problem](https://www.dailycodingproblem.com/).
