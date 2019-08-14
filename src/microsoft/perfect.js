@@ -4,9 +4,10 @@
 module.exports = {
     findPerfectNumber: (n) => {
         let curr = 0;
-        for (let i = 19; i < Number.MAX_SAFE_INTEGER; i++)
-            if ((i + '').split('').reduce((a, b) => parseInt(a) + parseInt(b)) === 10)
-                if (++curr === n)
-                    return i;
+        for (let i = 19; i < Number.MAX_SAFE_INTEGER; i++) {
+            let sum = 0;
+            for (let s of i.toString().split("")) sum += parseInt(s);
+            if (sum === 10) if (++curr === n) return i;
+        }
     }
 };
