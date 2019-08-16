@@ -23,6 +23,5 @@ exports.normalise = function normalise(/*string*/ string) {
         }
     });
 
-    if (!stateClosed) removeCount++;
-    return removeCount;
+    return stateClosed ? removeCount : ++removeCount;
 };
