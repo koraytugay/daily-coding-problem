@@ -2,14 +2,9 @@
 // find the minimum number of rooms required.
 // For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
 exports.roomsRequired = function roomsRequired(lectureIntervals) {
-    function Room() {
-        return {
-            busy: []
-        };
-    }
+    function Room() {return {busy: []};}
 
     let rooms = [];
-
     lectureIntervals.forEach(lectureInterval => {
         let roomFound = false;
         rooms.forEach(room => {
@@ -29,6 +24,5 @@ exports.roomsRequired = function roomsRequired(lectureIntervals) {
             rooms.push(room);
         }
     });
-
     return rooms;
 };
