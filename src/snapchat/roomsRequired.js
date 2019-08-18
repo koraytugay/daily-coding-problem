@@ -27,8 +27,6 @@ exports.roomsRequired = function roomsRequired(lectureIntervals) {
                     roomBusyInLectureHours = true;
                 }
             });
-            for (let k = 0; k < room.busy.length; k++) {
-            }
             if (!roomBusyInLectureHours) {
                 room.busy.push(lectureInterval);
                 roomFound = true;
