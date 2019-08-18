@@ -16,16 +16,8 @@ exports.roomsRequired = function roomsRequired(lectureIntervals) {
         rooms.forEach(room => {
             let roomBusyInLectureHours = false;
             room.busy.forEach(reserved => {
-                let lectureStart = lectureInterval[0];
-                let lectureEnd = lectureInterval[1];
-                let reservedStart = reserved[0];
-                let reservedEnd = reserved[1];
-                if (lectureStart > reservedStart && lectureStart < reservedEnd) {
-                    roomBusyInLectureHours = true;
-                }
-                if (lectureEnd > reservedStart && lectureEnd < reservedEnd) {
-                    roomBusyInLectureHours = true;
-                }
+                if (lectureInterval[0] > reserved[0] && lectureInterval[0] < reserved[1]) roomBusyInLectureHours = true;
+                if (lectureInterval[1] > reserved[0] && lectureInterval[1] < reserved[1]) roomBusyInLectureHours = true;
             });
             if (!roomBusyInLectureHours) {
                 room.busy.push(lectureInterval);
