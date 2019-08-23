@@ -29,3 +29,13 @@ s = printMatrixClockwise.printMatrixClockwise([
     ['m', 'n', 'o', 'p'],
 ]);
 expect('abcdhlponmiefgkj').eq(s);
+
+s = printMatrixClockwise.printMatrixClockwise([
+        ['00', '20', '30', '40', '50'],
+        ['60', '70', '80', '90', '10'],
+        ['11', '12', '13', '14', '15'],
+        ['16', '17', '18', '19', '20']
+    ]
+);
+
+expect('0020304050101520191817161160708090141312').eq(s);
