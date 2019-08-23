@@ -7,7 +7,6 @@ s = printMatrixClockwise.printMatrixClockwise([
     ['a', 'b'],
     ['c', 'd'],
 ]);
-
 expect('abdc').eq(s);
 
 s = printMatrixClockwise.printMatrixClockwise([
@@ -18,9 +17,7 @@ s = printMatrixClockwise.printMatrixClockwise([
     ['q', 'r', 's', 't'],
     ['u', 'v', 'y', 'z'],
 ]);
-
 expect('abcdhlptzyvuqmiefgkosrnj').eq(s);
-
 
 s = printMatrixClockwise.printMatrixClockwise([
     ['a', 'b', 'c', 'd'],
@@ -37,5 +34,4 @@ s = printMatrixClockwise.printMatrixClockwise([
         ['16', '17', '18', '19', '20']
     ]
 );
-
 expect('0020304050101520191817161160708090141312').eq(s);
