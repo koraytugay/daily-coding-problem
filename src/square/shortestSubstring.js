@@ -6,7 +6,7 @@ exports.shortest = (/** String **/ string, /** Set **/ characters) => {
     let shortest = null;
     string.split("").forEach((char, index) => {
         if (characters.has(char))
-            for (let i = index; i < string.length; i++) {
+            for (let i = index; i <= string.length; i++) {
                 let substring = string.substr(index, i);
                 let copy = new Set(characters);
                 for (let c of substring)
