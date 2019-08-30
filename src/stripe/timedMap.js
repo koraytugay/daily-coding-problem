@@ -10,7 +10,7 @@
 // that value forever or until it gets set at a later time.
 // In other words, when we get a key at a time, it should return
 // the value that was set for that key set at the most recent time.
-exports.timedMap = function timedMap() {
+exports.timedMap = () => {
     return {
         data: {},
         set: function (key, value, time) {
