@@ -19,7 +19,7 @@ exports.timedMap = function timedMap() {
             this.data.key[time] = value;
         },
         get: function (key, time) {
-            if (!this.data.key)
+            if (key in this.data)
                 return null;
             let val = null;
             while (!val && time > -1)
