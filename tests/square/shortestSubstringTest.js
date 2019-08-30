@@ -7,3 +7,4 @@ expect(shortest.shortest("a", new Set(['a', 'e', 'i']))).eq(null);
 expect(shortest.shortest("ae", new Set(['a', 'e', 'i']))).eq(null);
 expect(shortest.shortest("aei", new Set(['a', 'e', 'i']))).eq("aei");
 expect(shortest.shortest("aezzixxxxaezi", new Set(['a', 'e', 'i']))).eq("aezi");
+expect(shortest.shortest("aezzixxxxaezti", new Set(['a', 'e', 'i']))).eq("aezzi");
