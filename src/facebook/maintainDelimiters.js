@@ -31,33 +31,28 @@ exports.reverseKeepDelimiters = (chars, delimiters) => {
         builder = '';
     }
 
-    if (isWord) {
+    if (isWord)
         words.push(builder);
-    } else {
+    else
         nonWords.push(builder);
-    }
 
     builder = '';
     isWord = !delimiters.has(chars[0]);
     let max = Math.max(words.length, nonWords.length);
-    if (isWord) {
+    if (isWord)
         for (let i = 0; i < max; i++) {
             builder = builder + words.pop();
-            if (nonWords[i]) {
+            if (nonWords[i])
                 builder = builder + nonWords[i];
-            }
         }
-    } else {
+    else
         for (let i = 0; i < max; i++) {
-            if (nonWords[i]) {
+            if (nonWords[i])
                 builder = builder + nonWords[i];
-            }
             let word = words.pop();
-            if (word) {
+            if (word)
                 builder = builder + word;
-            }
         }
-    }
 
     return builder;
 };
