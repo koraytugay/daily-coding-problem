@@ -23,4 +23,3 @@ module.exports = {
         return {val, left, right}
     }
 };
-
